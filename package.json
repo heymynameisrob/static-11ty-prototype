@@ -1,0 +1,37 @@
+{
+  "name": "static-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:css": "postcss src/styles/styles.css -o static/styles.css --watch",
+    "start:eleventy": "eleventy --serve",    
+    "start:js": "npx babel src/js/*.js --out-file static/main.js --watch",
+    "start": "run-p start:css start:js start:eleventy",
+    "build:css": "postcss src/styles/styles.css -o static/styles.css",
+    "build:eleventy": "eleventy",    
+    "build:js": "npx babel src/js/*.js --out-file static/main.js",
+    "build": "run-s buid:css build:js build:eleventy"
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@babel/core": "^7.10.4",
+    "@babel/cli": "^7.0.0",
+    "@babel/preset-env": "^7.10.4",
+    "autoprefixer": "^9.8.5",
+    "luxon": "^1.24.1",
+    "markdown-it": "^11.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.0.4"
+  }
+}
